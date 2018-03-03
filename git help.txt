@@ -1,7 +1,11 @@
+#ссылки которыми пользовался
+# https://habrahabr.ru/post/273897/
+# http://simple-training.com/git-vcs/git-install/
+
 # инициализация и конфигурация
 git init
-git config --global user.name "AzamatIlyasov"
-git config --global user.email Azamat3.1415@gmail.com
+git config --global user.name "имя пользователя"
+git config --global user.email почта@gmail.com
 git config --list
 
 # Как сделать так чтобы Git использовал другой текстовый редактор 
@@ -13,6 +17,8 @@ git config --global mergetool.kdiff3.cmd '"C:\\Program Files\\KDiff3\\kdiff3" $B
 git config --global mergetool.kdiff3.cmd '"C:\\Program Files (x86)\\Meld\\Meld.exe" $BASE $LOCAL $REMOTE -o $MERGED'
 
 # необходимо создать файл .gitignore для файлов которые будут игнорироваться (всякий мусор)
+
+#нужно добавить файлы перед коммитом
 git add .
 
 # проверка статуса git
@@ -69,9 +75,16 @@ git checkout new_f #переключаемся в ветку new_f
 git merge 
 
 
-#git-hub push 
+#github.com - инициализация и ssh keys (нашел в help https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter] #в данной папке будет сформирована ключ, который будет нужно вставить в специальное поле в github.com
+Enter passphrase (empty for no passphrase): [Type a passphrase] #ключевая фраза - типа пароля для push в github.com
+Enter same passphrase again: [Type passphrase again]
+
+
+#github.com push 
 git remote add origin git@github.com:AzamatIlyasov/<repository name from GitHub>
 git push -u origin master
 
-#скопировать из git-hub 
+#скопировать из github.com
 git clone https://github.com/myuser/project.git <myfolder>
