@@ -70,4 +70,8 @@ git merge
 
 
 #git-hub push 
-git push origin master
+git remote add origin git@github.com:AzamatIlyasov/<repository name from GitHub>
+git push -u origin master
+
+#скопировать из git-hub 
+git clone https://github.com/myuser/project.git <myfolder>
