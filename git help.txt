@@ -1,0 +1,73 @@
+# инициализация и конфигурация
+git init
+git config --global user.name "AzamatIlyasov"
+git config --global user.email Azamat3.1415@gmail.com
+git config --list
+
+# Как сделать так чтобы Git использовал другой текстовый редактор 
+git config --global core.editor "'C:\Program Files\Sublime Text 3\sublime_text.exe' -multiInst -notabbar -nosession -noPlugin"
+
+# какой утилитой (надо будет скачать) будем решать конфликты при слеянии - merge
+git config --global merge.tool kdiff3
+git config --global mergetool.kdiff3.cmd '"C:\\Program Files\\KDiff3\\kdiff3" $BASE $LOCAL $REMOTE -o $MERGED'
+git config --global mergetool.kdiff3.cmd '"C:\\Program Files (x86)\\Meld\\Meld.exe" $BASE $LOCAL $REMOTE -o $MERGED'
+
+# необходимо создать файл .gitignore для файлов которые будут игнорироваться (всякий мусор)
+git add .
+
+# проверка статуса git
+git status
+
+# инициализация проекта (всех файлов) - добавления всех файлов
+git commit -a -m"init"
+
+# untracked files - файлы которые не под контролем Git
+git status --untracked-files-all
+
+# предположим что один или более файлов мы забыли
+# поместить в список игнорируемых и сейчас нам надо убрать их из под надзора Git.
+git rm --cached <имя файла>
+
+# добавим неотслеживаемый файл в индекс
+git add LICENSE.php
+
+# Делаем коммит:
+git commit -m"add files"
+
+# Можно выполнить индексацию/добавление по маске:
+# Как вы понимаете после этой команды в индекс попадат все файлы с расширением php.
+git add "*.php"
+
+# для возврата в состояние которая зафиксировалась в GIT
+git checkout -- LICENSE.php
+
+# проверка изменения
+git log
+
+# проверка изменения с не определенным форматом вывода
+git log --pretty=format:"%h - %an, %ar : %s"
+
+# коммиты за последние 2 недели
+git log --since=2.weeks
+
+# какие изменения в последнем 2 (двух) коммитах
+git log -p -2 
+
+# создание ветки
+git checkout -n new_f #создаем и сразу переключаемся
+git branch new_f2 
+
+# переход на другую ветку
+git checkout new_f2
+
+# какие ветки есть
+git branch
+git branch -v # какие коммиты последние
+
+# слеяние, для безопасного слеяния необходимо сначало все это проделать в другой ветке
+git checkout new_f #переключаемся в ветку new_f
+git merge 
+
+
+#git-hub push 
+git push origin master
