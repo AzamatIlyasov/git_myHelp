@@ -91,3 +91,15 @@ git push -u origin master
 
 #скопировать из github.com
 git clone https://github.com/myuser/project.git <myfolder>
+
+#что-то (Загрузка локальных изменений в удаленный репозиторий)
+#(The current branch _____ has no upstream branch.
+#To push the current branch and set the remote as upstream, use
+#git push --set-upstream origin _______)
+git push --set-upstream origin ______
+
+#подгрузить изменения ИЗ GitHub
+git pull
+
+
+
